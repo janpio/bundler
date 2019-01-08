@@ -142,6 +142,8 @@ module Bundler
             f.puts ERB.new(template, nil, "-").result(binding)
           end
         end
+
+        generate_windows_bundler_executable_stubs(bin_path, executable)
       end
 
       if options[:binstubs_cmd] && exists.any?
@@ -182,10 +184,17 @@ module Bundler
             f.puts ERB.new(template, nil, "-").result(binding)
           end
         end
+        generate_windows_bundler_executable_stubs(bin_path, executable)
       end
     end
 
   private
+
+    def generate_windows_bundler_executable_stubs(bin_path, executable)
+      File.open "#{bin_path}/#{executable}.cmd", "w", 0o755 do |f|
+        f.puts '@ruby "%~dpn0" %*'
+      end
+    end
 
     # the order that the resolver provides is significant, since
     # dependencies might affect the installation of a gem.
