@@ -319,7 +319,7 @@ module Spec
           else
             root + "bundler-#{Bundler::VERSION}.gem"
           end
-        elsif g.to_s =~ %r{\A/.*\.gem\z}
+        elsif g.to_s =~ %r{\A[A-Z]?:/.*\.gem\z}
           g
         else
           "#{gem_repo}/gems/#{g}.gem"
