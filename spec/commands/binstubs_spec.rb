@@ -251,7 +251,8 @@ RSpec.describe "bundle binstubs <gem>" do
 
         bundle "binstubs rack"
         binary = bundled_app("bin/rackup")
-        expect(File.stat(binary).mode.to_s(8)).to eq("100775")
+        expected_permission = if Gem.win_platform? then "100644" else "100775" end
+        expect(File.stat(binary).mode.to_s(8)).to eq(expected_permission)
       end
     end
 
