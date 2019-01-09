@@ -2,4 +2,3 @@
 --color
 --warnings
 --require spec_helper
--r rspec_junit_formatter --format RspecJunitFormatter -o rspec/bundler-junit-results.xml
