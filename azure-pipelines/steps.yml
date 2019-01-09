@@ -16,6 +16,6 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testRunner: JUnit
-    testResultsFiles: rspec/bundler-test-bot.xml
+    testResultsFiles: rspec/bundler-junit-results.xml
   displayName: Publish test results
   condition: succeededOrFailed()
