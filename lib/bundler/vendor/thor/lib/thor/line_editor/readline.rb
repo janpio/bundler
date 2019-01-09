@@ -1,5 +1,5 @@
 begin
-  require "readline"
+  require "readline" unless Gem.win_platform?
 rescue LoadError
 end
 
