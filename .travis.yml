@@ -33,7 +33,6 @@ rvm:
   - 2.3.8
 
 stages:
-  - linting
   - test
 
 # Rubygems versions MUST be available as rake tasks
@@ -46,9 +45,6 @@ env:
 
 jobs:
   include:
-    - rvm: 2.6.0
-      script: rake rubocop
-      stage: linting
     # Ruby 2.5, Rubygems 2.7 and up
     - rvm: 2.5.3
       env: RGV=v2.7.7
