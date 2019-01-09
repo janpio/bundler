@@ -29,6 +29,7 @@ install:
 before_test:
   - ruby -v
   - which ruby
+  - ruby tty.rb
 
 build: off
 

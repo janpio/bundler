@@ -6,6 +6,10 @@ steps:
   condition: not(eq(variables['Agent.OS'], 'Darwin')) # not possible on Mac
 
 - script: |
+    ruby tty.rb
+  displayName: 'ruby tty.rb'
+
+- script: |
     ruby bin/rake spec:deps
   displayName: 'ruby bin/rake spec:deps'
 
