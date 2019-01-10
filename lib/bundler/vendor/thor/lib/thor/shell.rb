@@ -12,10 +12,8 @@ class Bundler::Thor
         @shell ||= if ENV["THOR_SHELL"] && !ENV["THOR_SHELL"].empty?
           Bundler::Thor::Shell.const_get(ENV["THOR_SHELL"])
         elsif RbConfig::CONFIG["host_os"] =~ /mswin|mingw/ && !ENV["ANSICON"]
-          puts "$$$ elsif: use basis shell "
           Bundler::Thor::Shell::Basic
         else
-          puts "$$$ elsif: use color shell "
           Bundler::Thor::Shell::Color
         end
       end
