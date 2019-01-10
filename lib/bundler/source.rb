@@ -25,7 +25,7 @@ module Bundler
           message += Bundler.ui.add_color(" (was #{locked_spec_version})", version_color(spec.version, locked_spec_version))
         end
       end
-      puts "$%& #{message}"
+
       message
     end
 
