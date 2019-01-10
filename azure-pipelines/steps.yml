@@ -10,6 +10,14 @@ steps:
   displayName: 'ruby bin/rake spec:deps'
 
 - script: |
+    ruby bin/rspec ./spec/bundler/source_spec.rb:66
+  displayName: 'ruby bin/rspec ./spec/bundler/source_spec.rb:66'
+
+- script: |
+    ruby bin/rspec ./spec/bundler/source_spec.rb
+  displayName: 'ruby bin/rspec ./spec/bundler/source_spec.rb'
+
+- script: |
     ruby bin/rspec
   displayName: 'ruby bin/rspec'
 
